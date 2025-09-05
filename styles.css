@@ -1,114 +1,133 @@
-/* ===== TrustChainX — Coming Soon styles (English only) ===== */
-
+/* TrustChainX — Coming Soon (clean CSS) */
 :root{
-  --fg: #e9ecef;
-  --muted: #b0b9c6;
-  --brand: #23d59f;
-  --bg: #0b1014;
-  --card: #12181f;
-  --ring: rgba(35,213,159,.35);
+  --bg:#0b1014;
+  --card:#131a22;
+  --fg:#e9ecef;
+  --muted:#a9b3bf;
+  --ring:rgba(0,0,0,.35);
+
+  /* brand tones that match the logo */
+  --brand-1:#19e7a1;
+  --brand-2:#11c7a1;
+
+  --shadow:0 22px 60px rgba(0,0,0,.45);
+  --border:1px solid rgba(255,255,255,.06);
 }
 
-*{ box-sizing:border-box; }
-html{ font-size:18px }
-@media (min-width:768px){ html{ font-size:19px } }
-@media (min-width:1024px){ html{ font-size:20px } }
+/* responsive type scale */
+html{font-size:18px}
+@media (min-width:768px){html{font-size:19px}}
+@media (min-width:1024px){html{font-size:20px}}
 
+*{box-sizing:border-box}
 body{
   margin:0;
-  color:var(--fg);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-               Roboto, "Helvetica Neue", Arial, "Apple Color Emoji",
-               "Segoe UI Emoji";
+  min-height:100dvh;
+  display:grid;
+  place-items:center;
   background:
-    radial-gradient(1200px 600px at 50% -10%, rgba(35,213,159,.12), transparent),
-    radial-gradient(800px 400px at 80% 20%, rgba(35,213,159,.08), transparent),
-    var(--bg);
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    radial-gradient(1200px 600px at 50% -10%, #0b1014 0%, #0b1014 100%),
+    radial-gradient(900px 500px at 100% 20%, #0b1014 0%, #0b1014 100%);
+  color:var(--fg);
+  font:500 1rem/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
   padding:28px;
 }
 
-/* main card */
+a{color:inherit; text-decoration:none}
+a:hover{text-decoration:underline}
+
+.wrapper{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
 .card{
-  max-width: 840px;
-  width: 100%;
-  padding: 28px 32px;
-  border-radius: 18px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)),
-    var(--card);
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.06);
+  width:100%;
+  max-width:960px;                 /* wider card */
+  padding:32px 36px 28px;
+  background:linear-gradient(180deg, rgba(19,26,34,.92), rgba(19,26,34,.86));
+  border-radius:18px;
+  border:var(--border);
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
 }
 
-/* centered logo */
+.logo-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:-40px;
+  margin-bottom:14px;
+}
 .logo{
-  width: 72px;
-  height: 72px;
-  display: block;
-  margin: -40px auto 12px;
-  border-radius: 16px; /* in case it is a rounded-square asset */
+  width:84px;                      /* larger logo */
+  height:84px;
+  border-radius:18px;
+  padding:10px;
+  background:
+    radial-gradient(36px 36px at 50% 30%, rgba(255,255,255,.1), rgba(255,255,255,0)),
+    rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter:saturate(140%) blur(4px);
 }
 
-/* typography */
 h1{
-  margin: 0 0 8px;
-  font-size: 2rem;
-  letter-spacing: .2px;
+  margin:0 0 4px;
+  font-weight:800;
+  font-size:2rem;
+  letter-spacing:.2px;
 }
-.lead{
-  margin: 0 0 18px;
-  font-size: 1.05rem;
-  color: var(--muted);
-  line-height: 1.5;
-}
-.section-title{
-  margin: 10px 0 8px;
-  font-weight: 800;
-  font-size: 1.25rem;
-}
+.sub{margin:0 0 22px; color:var(--muted)}
 
-/* actions */
-.actions{ display:flex; gap:12px; flex-wrap:wrap; margin:14px 0 10px; }
+h2{font-size:1.25rem; margin:0 0 8px}
+p{margin:0 0 18px}
+
+/* buttons */
+.btns{display:flex; gap:12px; margin:6px 0 18px}
 .btn{
-  appearance:none; border:1px solid transparent;
-  padding:12px 18px; border-radius:12px;
-  font-weight:700; cursor:pointer; text-decoration:none; display:inline-block;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 18px;
+  border-radius:12px;
+  background:#1c242e;
+  border:1px solid rgba(255,255,255,.08);
 }
-.btn-primary{ background:var(--brand); color:#0a0f13; }
-.btn-primary:hover{ filter:brightness(1.06); }
-.btn-ghost{
-  background:transparent; color:var(--fg);
-  border-color:rgba(255,255,255,.18);
+.btn:hover{background:#1e2833}
+.btn--brand{
+  color:#001b14;
+  background:linear-gradient(135deg, var(--brand-1), var(--brand-2));
+  border:none;
 }
-.btn-ghost:hover{ border-color:rgba(255,255,255,.35); }
-.btn:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
+.btn--brand:hover{filter:brightness(1.05)}
+.btn:focus{
+  outline:0;
+  box-shadow:0 0 0 3px rgba(17,199,161,.35);
+}
+.btn:active{transform:translateY(1px)}
 
-/* email row */
-.emails{
-  margin-top:14px;
-  color:var(--muted);
-  font-size:.98rem;
+/* divider line */
+.divider{
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  margin:14px 0 10px;
 }
-.emails a{ color:var(--fg); text-decoration:none; border-bottom:1px dotted rgba(255,255,255,.25); }
-.emails a:hover{ border-bottom-color: rgba(255,255,255,.6); }
 
-/* social links as pills */
-.links{ margin-top:14px; display:flex; gap:14px; flex-wrap:wrap; }
-.links a{
-  padding:8px 12px; border:1px solid rgba(255,255,255,.14);
-  border-radius:999px; color:var(--fg); text-decoration:none;
-  font-weight:600; font-size:.95rem;
-}
-.links a:hover{ border-color:rgba(255,255,255,.35); }
+/* meta & social links */
+.meta{font-size:.9375rem; color:var(--muted)}
+.meta a{color:var(--fg)}
+.meta .dot{opacity:.5; padding:0 6px}
 
-/* footer */
-.footer{
-  margin-top:16px; display:flex; gap:12px; justify-content:space-between;
-  flex-wrap:wrap; color:var(--muted); font-size:.9rem;
+.links{display:flex; gap:12px; align-items:center; margin-top:10px}
+.links .sep{opacity:.35}
+
+/* footer small links */
+.footer-links{display:flex; gap:14px; font-size:.9rem; color:var(--muted); margin-top:8px}
+
+/* mobile tweaks */
+@media (max-width:520px){
+  .card{padding:26px 20px 20px}
+  .logo{width:72px; height:72px}
+  .btns{flex-direction:column}
+  .links{flex-wrap:wrap}
 }
-.footer a{ color:var(--muted); text-decoration:none; }
-.footer a:hover{ color:var(--fg); }
