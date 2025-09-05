@@ -132,3 +132,20 @@ p{margin:0 0 16px}
 /* Slightly larger headings for better hierarchy */
 h1{ font-size:2.1rem; letter-spacing:.2px; }
 .lead{ font-size:1.15rem; }
+/* Force the primary CTA to stay green */
+.btn--cta{
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2)) !important;
+  color:#041b18 !important;
+  border:0 !important;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.10), 0 6px 18px rgba(0,0,0,.25);
+}
+.btn--cta:hover,
+.btn--cta:focus{
+  filter: brightness(1.06) saturate(1.06);
+  transform: translateY(-0.5px);
+}
+
+/* Smooth transitions for all buttons */
+.btn{
+  transition: transform .12s ease, filter .15s ease, background .2s ease, color .2s ease;
+}
