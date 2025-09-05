@@ -1,73 +1,74 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>TrustChainX™ — Coming soon</title>
-  <meta name="description" content="Trusted infrastructure for cross-border commerce. A modern platform that blends compliance-first trade operations with seamless digital payments."/>
-  <meta property="og:title" content="TrustChainX™ — Coming soon"/>
-  <meta property="og:description" content="Trusted infrastructure for cross-border commerce."/>
-  <meta property="og:image" content="og-image.png"/>
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon-180.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrustChainX™ — Coming Soon</title>
+  <meta name="description" content="Trusted infrastructure for cross-border commerce.">
+  <meta name="theme-color" content="#0b1014">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TrustChainX™ — Coming Soon">
+  <meta property="og:description" content="Trusted infrastructure for cross-border commerce.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:url" content="https://trustchainx.io/">
+
+  <!-- Icons / PWA -->
+  <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="styles.css"/>
+
+  <link rel="preload" href="logo-512.png" as="image">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container">
-    <section class="card" role="region" aria-label="coming soon">
-      <div class="logo-wrap" aria-hidden="true">
+  <main class="wrapper" aria-label="TrustChainX coming soon">
+    <section class="card" role="region" aria-labelledby="brand">
+      <div class="logo-wrap">
         <img class="logo" src="logo-512.png" alt="TrustChainX logo">
       </div>
 
-      <h1>TrustChainX™</h1>
-      <p class="lead">Trusted infrastructure for cross-border commerce.</p>
+      <h1 id="brand">TrustChainX™</h1>
+      <p class="sub">Trusted infrastructure for cross-border commerce.</p>
 
       <h2>We're building.</h2>
-      <p>
-        A modern platform that blends compliance‑first trade operations with seamless digital payments.
-        Our focus: real‑world value, security by design, and global scale.
+      <p>A modern platform that blends compliance-first trade operations with seamless digital payments. Our focus: real-world value, security by design, and global scale.</p>
+
+      <div class="btns">
+        <a class="btn btn--brand" href="mailto:info@trustchainx.io?subject=Join%20the%20waitlist&body=Hi%20TrustChainX%20team%2C%0A%0APlease%20add%20me%20to%20the%20waitlist.%0A%0AName%3A%0ACompany%3A%0AUse%20case%3A%0A">Join the waitlist</a>
+        <a class="btn" href="mailto:press@trustchainx.io?subject=Press%20inquiry">Press inquiries</a>
+      </div>
+
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <p class="meta">
+        Official emails:
+        <a href="mailto:info@trustchainx.io">info@trustchainx.io</a>
+        <span class="dot">•</span>
+        <a href="mailto:support@trustchainx.io">support@trustchainx.io</a>
+        <span class="dot">•</span>
+        <a href="mailto:ceo@trustchainx.io">ceo@trustchainx.io</a>
       </p>
 
-      <!--
-      If and when counsel clears public token language, you can replace the paragraph above with this:
-      <p>
-        A modern platform that blends compliance‑first trade operations with seamless digital payments.
-        The TrustChainX protocol and utility token will help secure the network, reward verified compliance,
-        and power on‑chain settlement—at global scale.
-      </p>
-      <p><small>Nothing on this page is an offer of tokens or securities.</small></p>
-      -->
-
-      <div class="actions">
-        <a class="btn primary" href="mailto:info@trustchainx.io?subject=Join%20the%20waitlist">Join the waitlist</a>
-        <a class="btn secondary" href="mailto:press@trustchainx.io?subject=Press%20inquiry">Press inquiries</a>
+      <div class="links">
+        <a href="https://x.com/trustchainx" target="_blank" rel="noopener">X</a>
+        <span class="sep">·</span>
+        <a href="https://linkedin.com/company/trustchainx" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="sep">·</span>
+        <a href="https://github.com/trustchainx-global" target="_blank" rel="noopener">GitHub</a>
       </div>
 
-      <hr/>
-
-      <div class="footer">
-        <span class="emails">Official emails:
-          <a href="mailto:info@trustchainx.io">info@trustchainx.io</a> ·
-          <a href="mailto:support@trustchainx.io">support@trustchainx.io</a> ·
-          <a href="mailto:ceo@trustchainx.io">ceo@trustchainx.io</a>
-          <div class="links">
-  <a href="https://x.com/trustchainx" target="_blank" rel="noopener">X</a> ·
-  <a href="https://linkedin.com/company/trustchainx" target="_blank" rel="noopener">LinkedIn</a> ·
-  <a href="https://github.com/trustchainx-global" target="_blank" rel="noopener">GitHub</a>
-</div>
-        </span>
-        <span style="flex:1"></span>
-        <a href="#" aria-label="Privacy policy">Privacy</a> ·
-        <a href="#" aria-label="Terms of use">Terms</a> ·
-        <a href="#" aria-label="Security practices">Security</a>
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <span class="sep">·</span>
+        <a href="/terms">Terms</a>
+        <span class="sep">·</span>
+        <a href="/security">Security</a>
       </div>
 
-      <div class="footer" style="margin-top:8px">
-        <small>© 2025 TS MIAMI GLOBAL LLC. All rights reserved.</small>
-      </div>
+      <p class="meta" style="margin-top:8px;">© 2025 TS MIAMI GLOBAL LLC. All rights reserved.</p>
     </section>
   </main>
 </body>
