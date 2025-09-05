@@ -1,89 +1,114 @@
+/* ===== TrustChainX — Coming Soon styles (English only) ===== */
 
 :root{
-  --bg:#0b0f12;
-  --card:#12181f;
-  --muted:#b9c2cf;
-  --text:#ecf3ff;
-  --accent:#28e2a2;
-  --accent-2:#7dfcc4;
-  --ring: rgba(40,226,162,.18);
-  --radius: 18px;
+  --fg: #e9ecef;
+  --muted: #b0b9c6;
+  --brand: #23d59f;
+  --bg: #0b1014;
+  --card: #12181f;
+  --ring: rgba(35,213,159,.35);
 }
-*{box-sizing:border-box}
-html,body{height:100%}
+
+*{ box-sizing:border-box; }
+html{ font-size:18px }
+@media (min-width:768px){ html{ font-size:19px } }
+@media (min-width:1024px){ html{ font-size:20px } }
+
 body{
   margin:0;
-  background: radial-gradient(1200px 800px at 50% -20%, rgba(40,226,162,.06), transparent 60%),
-              linear-gradient(180deg, #0b0f12 0%, #0b0f12 100%);
-  color:var(--text);
-  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
-  display:flex; align-items:center; justify-content:center; padding:40px;
+  color:var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Apple Color Emoji",
+               "Segoe UI Emoji";
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(35,213,159,.12), transparent),
+    radial-gradient(800px 400px at 80% 20%, rgba(35,213,159,.08), transparent),
+    var(--bg);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
 }
-.container{
-  width:100%;
-  max-width: 920px; /* wider */
-  margin: 0 auto;
-}
+
+/* main card */
 .card{
-  position:relative;
-  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.08);
-  box-shadow: 0 20px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.06);
-  padding: 44px 48px 28px;
-  border-radius: var(--radius);
+  max-width: 840px;
+  width: 100%;
+  padding: 28px 32px;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)),
+    var(--card);
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.06);
 }
-.logo-wrap{
-  position:absolute;
-  left:50%; transform: translateX(-50%);
-  top: -36px; /* sits above the card top */
-  width: 72px; height: 72px;
-  display:grid; place-items:center;
-  border-radius:16px;
-  background: radial-gradient(50% 60% at 50% 35%, rgba(40,226,162,.22), rgba(40,226,162,.0) 70%), #0e141a;
-  border:1px solid rgba(255,255,255,.09);
-  box-shadow: 0 10px 35px rgba(0,0,0,.45), 0 0 0 8px var(--ring);
-}
+
+/* centered logo */
 .logo{
-  width: 52px; height: 52px;
-  display:block; border-radius:14px;
+  width: 72px;
+  height: 72px;
+  display: block;
+  margin: -40px auto 12px;
+  border-radius: 16px; /* in case it is a rounded-square asset */
 }
+
+/* typography */
 h1{
-  font-size: 34px; line-height:1.2; margin: 6px 0 6px; letter-spacing:.2px;
+  margin: 0 0 8px;
+  font-size: 2rem;
+  letter-spacing: .2px;
 }
 .lead{
-  color: var(--muted); margin: 0 0 18px; font-weight:500;
+  margin: 0 0 18px;
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.5;
 }
-h2{margin: 18px 0 8px; font-size: 22px}
-p{margin: 0 0 8px}
-.actions{display:flex; gap:12px; margin: 20px 0 12px; flex-wrap:wrap}
+.section-title{
+  margin: 10px 0 8px;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+/* actions */
+.actions{ display:flex; gap:12px; flex-wrap:wrap; margin:14px 0 10px; }
 .btn{
-  appearance:none; border:0; border-radius: 999px;
-  padding: 10px 16px; font-weight: 600; cursor:pointer;
-  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+  appearance:none; border:1px solid transparent;
+  padding:12px 18px; border-radius:12px;
+  font-weight:700; cursor:pointer; text-decoration:none; display:inline-block;
 }
-.btn.primary{
-  background: linear-gradient(180deg, var(--accent-2), var(--accent)); color: #07281f;
-  box-shadow: 0 10px 25px rgba(40,226,162,.28), 0 1px 0 rgba(255,255,255,.3) inset;
+.btn-primary{ background:var(--brand); color:#0a0f13; }
+.btn-primary:hover{ filter:brightness(1.06); }
+.btn-ghost{
+  background:transparent; color:var(--fg);
+  border-color:rgba(255,255,255,.18);
 }
-.btn.secondary{
-  background: rgba(255,255,255,.06); color: var(--text);
-  border: 1px solid rgba(255,255,255,.1);
+.btn-ghost:hover{ border-color:rgba(255,255,255,.35); }
+.btn:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
+
+/* email row */
+.emails{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:.98rem;
 }
-.btn:active{ transform: translateY(1px) }
-hr{
-  border:0; height:1px; background: rgba(255,255,255,.08); margin: 18px 0 12px;
+.emails a{ color:var(--fg); text-decoration:none; border-bottom:1px dotted rgba(255,255,255,.25); }
+.emails a:hover{ border-bottom-color: rgba(255,255,255,.6); }
+
+/* social links as pills */
+.links{ margin-top:14px; display:flex; gap:14px; flex-wrap:wrap; }
+.links a{
+  padding:8px 12px; border:1px solid rgba(255,255,255,.14);
+  border-radius:999px; color:var(--fg); text-decoration:none;
+  font-weight:600; font-size:.95rem;
 }
+.links a:hover{ border-color:rgba(255,255,255,.35); }
+
+/* footer */
 .footer{
-  display:flex; gap:10px; align-items:center; flex-wrap:wrap; color: var(--muted);
-  font-size: 13px;
+  margin-top:16px; display:flex; gap:12px; justify-content:space-between;
+  flex-wrap:wrap; color:var(--muted); font-size:.9rem;
 }
-.footer a{color: var(--muted); text-decoration:none}
-.footer a:hover{ text-decoration: underline }
-.emails a{color: var(--text)}
-small{font-size: 12px; color: var(--muted)}
-@media (max-width: 640px){
-  .card{ padding: 56px 18px 22px }
-  .logo-wrap{ top: -28px; width:64px; height:64px}
-  .logo{ width:44px; height:44px}
-  h1{ font-size:28px }
-}
+.footer a{ color:var(--muted); text-decoration:none; }
+.footer a:hover{ color:var(--fg); }
