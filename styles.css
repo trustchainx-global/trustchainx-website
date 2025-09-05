@@ -107,3 +107,28 @@ p{margin:0 0 16px}
 /* Press button: neutral -> brand on hover */
 .btn--press{background:#1e293b; border:1px solid rgba(255,255,255,.12); color:#e5edf5}
 .btn--press:hover{background:linear-gradient(90deg,var(--brand-1),var(--brand-2)); color:#041b18; border:0; filter:brightness(1.04) saturate(1.05)}
+/* Make the card a bit wider & tighten layout on desktop */
+.card{ max-width: 880px; }
+
+/* Bigger, centered logo */
+.logo-wrap{ display:flex; justify-content:center; margin:-8px 0 14px; }
+.logo{ width:76px; height:76px; border-radius:18px; }
+
+/* Buttons: keep primary green; press turns green on hover/active */
+.btn--press{
+  background:#1e293b;
+  border:1px solid rgba(255,255,255,.12);
+  color:#e5edf5;
+}
+.btn--press:hover,
+.btn--press:focus,
+.btn--press:active{
+  background:linear-gradient(90deg,var(--brand-1),var(--brand-2));
+  color:#041b18;
+  border:0;
+  filter:brightness(1.04) saturate(1.05);
+}
+
+/* Slightly larger headings for better hierarchy */
+h1{ font-size:2.1rem; letter-spacing:.2px; }
+.lead{ font-size:1.15rem; }
