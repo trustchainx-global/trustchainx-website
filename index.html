@@ -31,7 +31,11 @@
   <link rel="preload" href="logo-512.png" as="image" />
 
   <style>
-    :root{
+    .only-mobile{display:none}
+@media (max-width:480px){
+  .only-desktop{display:none}
+  .only-mobile{display:inline}
+}  :root{
       --bg:#0b1014;
       --card:#12181f;
       --fg:#e9ecef;
