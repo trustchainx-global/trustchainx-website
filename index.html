@@ -8,18 +8,18 @@
   <meta name="description" content="Trusted infrastructure for cross-border commerce. A modern platform that blends compliance-first trade operations with seamless digital payments. Our focus: real-world value, security by design, and global scale." />
   <meta name="theme-color" content="#0b1014" />
 
-<!-- Open Graph / Twitter cards -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="TrustChainX™ — Coming Soon">
-<meta property="og:description" content="Trusted infrastructure for cross-border commerce.">
-<meta property="og:url" content="https://trustchainx.io/">
-<meta property="og:image" content="https://trustchainx.io/og-image.png">
+  <!-- Open Graph / Twitter cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TrustChainX™ — Coming Soon">
+  <meta property="og:description" content="Trusted infrastructure for cross-border commerce.">
+  <meta property="og:url" content="https://trustchainx.io/">
+  <meta property="og:image" content="https://trustchainx.io/og-image.png">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@TrustChainXHQ">
-<meta name="twitter:title" content="TrustChainX™ — Coming Soon">
-<meta name="twitter:description" content="Trusted infrastructure for cross-border commerce.">
-<meta name="twitter:image" content="https://trustchainx.io/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TrustChainXHQ">
+  <meta name="twitter:title" content="TrustChainX™ — Coming Soon">
+  <meta name="twitter:description" content="Trusted infrastructure for cross-border commerce.">
+  <meta name="twitter:image" content="https://trustchainx.io/og-image.png">
 
   <!-- Icons / PWA -->
   <link rel="icon" href="favicon.ico" />
@@ -31,24 +31,18 @@
   <link rel="preload" href="logo-512.png" as="image" />
 
   <style>
-    /* TrustChainX — one-file clean page (CSS inlined to avoid caching issues) */
-
     :root{
       --bg:#0b1014;
       --card:#12181f;
       --fg:#e9ecef;
       --muted:#a9b3bf;
       --ring:rgba(0,0,0,.35);
-
-      /* brand gradient (matches logo tones) */
       --brand-1:#18e1a3;
       --brand-2:#10c2a0;
-
       --shadow:0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
       --border:1px solid rgba(255,255,255,.06);
     }
 
-    /* type scale */
     html{font-size:18.5px}
     @media (min-width:768px){html{font-size:19px}}
     @media (min-width:1024px){html{font-size:20px}}
@@ -69,7 +63,6 @@
     a:hover{text-decoration:underline}
     a:focus-visible{outline:2px solid #2dd4bf; outline-offset:2px}
 
-    /* layout */
     .wrapper{width:100%; display:flex; justify-content:center}
     .card{
       width:min(92vw, 920px);
@@ -81,7 +74,6 @@
       backdrop-filter:blur(2px);
     }
 
-    /* logo */
     .logo-wrap{display:flex; justify-content:center; margin-top:-8px; margin-bottom:18px}
     .logo{
       width:76px; height:76px; border-radius:18px;
@@ -89,13 +81,11 @@
       display:block;
     }
 
-    /* headings & copy */
     #brand{font-size:2rem; letter-spacing:.2px; margin:0 0 4px}
     .sublead{margin:0 0 24px; color:var(--muted)}
     .lead{font-size:1.25rem; margin:0 0 8px}
     p{margin:0 0 16px}
 
-    /* buttons */
     .actions{display:flex; gap:12px; flex-wrap:wrap; margin:10px 0 18px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -105,49 +95,28 @@
       transition: transform .12s ease, filter .15s ease, background .2s ease, color .2s ease;
       font-weight:700;
     }
-    /* main CTA stays green */
     .btn--cta{
       background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
       color:#041b18; border:0;
       box-shadow: 0 0 0 1px rgba(0,0,0,.10), 0 6px 18px rgba(0,0,0,.25);
     }
     .btn--cta:hover,
-    .btn--cta:focus{
-      filter: brightness(1.06) saturate(1.06);
-      transform: translateY(-0.5px);
-    }
+    .btn--cta:focus{ filter: brightness(1.06) saturate(1.06); transform: translateY(-0.5px); }
 
-    /* press: neutral -> green on hover/active */
     .btn--press{
-      background:#1e293b;
-      border:1px solid rgba(255,255,255,.12);
-      color:#e5edf5;
+      background:#1e293b; border:1px solid rgba(255,255,255,.12); color:#e5edf5;
     }
-    .btn--press:hover,
-    .btn--press:focus,
-    .btn--press:active{
-      background:linear-gradient(90deg,var(--brand-1),var(--brand-2));
-      color:#041b18;
-      border:0;
-      filter:brightness(1.04) saturate(1.05);
+    .btn--press:hover,.btn--press:focus,.btn--press:active{
+      background:linear-gradient(90deg,var(--brand-1),var(--brand-2)); color:#041b18; border:0; filter:brightness(1.04) saturate(1.05);
     }
 
-    /* divider */
-    .rule{
-      height:1px; border:0; margin:8px 0 14px;
-      background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
-    }
+    .rule{height:1px; border:0; margin:8px 0 14px; background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);}
 
-    /* meta + links */
     .emails{color:var(--muted); font-size:.96rem}
     .emails a{text-decoration:underline}
-    .social, .legal{
-      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-      margin:10px 0 0;
-    }
+    .social, .legal{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0 0;}
     .copyr{margin-top:8px; color:var(--muted); font-size:.95rem}
 
-    /* responsive */
     @media (max-width:520px){
       .card{padding:28px 22px}
       .logo{width:68px; height:68px}
@@ -168,10 +137,7 @@
       <p class="sublead">Trusted infrastructure for cross-border commerce.</p>
 
       <h2 class="lead">We’re building.</h2>
-      <p>
-        A modern platform that blends compliance-first trade operations with seamless digital payments.
-        Our focus: real-world value, security by design, and global scale.
-      </p>
+      <p>A modern platform that blends compliance-first trade operations with seamless digital payments. Our focus: real-world value, security by design, and global scale.</p>
 
       <div class="actions" role="group" aria-label="Primary actions">
         <a class="btn btn--cta" href="mailto:info@trustchainx.io?subject=Join%20the%20waitlist%20—%20TrustChainX">Join the waitlist</a>
@@ -188,8 +154,8 @@
       </p>
 
       <p class="social" aria-label="Social links">
-        <a href="#" aria-label="X (Twitter)">X</a> ·
-        <a href="#" aria-label="LinkedIn">LinkedIn</a> ·
+        <a href="https://x.com/TrustChainXHQ" target="_blank" rel="noopener" aria-label="X (Twitter)">@TrustChainXHQ</a> ·
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
       </p>
 
       <nav class="legal" aria-label="Legal links">
