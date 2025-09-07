@@ -3,48 +3,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Security — TrustChainX™</title>
-  <meta name="description" content="Our security-by-design principles, vulnerability disclosure guidelines, and how to report issues responsibly." />
+  <meta name="description" content="Security at TrustChainX™. Our security-by-design principles and responsible disclosure guidelines." />
   <meta name="theme-color" content="#0b1014" />
 
+  <!-- Open Graph / Twitter cards (optional but nice for consistency) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Security — TrustChainX™">
+  <meta property="og:description" content="Security-by-design at TrustChainX™ and coordinated disclosure guidelines.">
+  <meta property="og:url" content="https://trustchainx.io/security.html">
+  <meta property="og:image" content="https://trustchainx.io/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TrustChainXHQ">
+  <meta name="twitter:title" content="Security — TrustChainX™">
+  <meta name="twitter:description" content="Security-by-design at TrustChainX™ and coordinated disclosure guidelines.">
+  <meta name="twitter:image" content="https://trustchainx.io/og-image.png">
+
   <style>
+    /* Base theme (matches index/privacy/terms) */
     :root{
-      --bg:#0b1014; --card:#12181f; --fg:#e9ecef; --muted:#a9b3bf;
+      --bg:#0b1014;
+      --card:#12181f;
+      --fg:#e9ecef;
+      --muted:#a9b3bf;
+      --ring:rgba(0,0,0,.35);
+      --brand-1:#18e1a3; /* brand green */
+      --brand-2:#10c2a0;
+
       --shadow:0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
       --border:1px solid rgba(255,255,255,.06);
-      --green:#18e1a3; /* same brand green used in Privacy/Terms */
     }
-    html{font-size:19px}
+
+    html{font-size:18.5px}
+    @media (min-width:768px){html{font-size:19px}}
+    @media (min-width:1024px){html{font-size:20px}}
+
+    *{box-sizing:border-box}
     body{
       margin:0; min-height:100dvh; display:grid; place-items:center;
       background:
         radial-gradient(1200px 600px at 50% 10%, #0f1620 0%, transparent 60%),
         radial-gradient(900px 500px at 100% 20%, #0c141b 0%, transparent 60%),
-        var(--bg);
-      color:var(--fg); font:500 1rem/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        #0b1014;
+      color:var(--fg);
+      font:500 1rem/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
       padding:28px;
     }
-    a{color:var(--green); text-decoration:none}
+
+    a{color:#18e1a3; text-decoration:none}
     a:hover{text-decoration:underline}
+    a:focus-visible{outline:2px solid #2dd4bf; outline-offset:2px}
+
     .wrapper{width:100%; display:flex; justify-content:center}
     .card{
-      width:min(92vw, 920px); padding:28px 32px; border-radius:16px;
+      width:min(92vw, 920px);
+      padding:32px 36px 24px;
+      border-radius:16px;
       background:linear-gradient(180deg, rgba(18,24,31,.96), rgba(18,24,31,.92));
-      border:var(--border); box-shadow:var(--shadow); backdrop-filter:blur(2px);
+      border:var(--border);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(2px);
     }
-    h1{margin:0 0 6px} .updated{color:var(--muted); margin:0 0 18px}
-    h2{margin:22px 0 8px} h3{margin:18px 0 6px}
-    ul{margin:0 0 14px 22px}
-    .back{display:inline-block; margin:0 0 12px}
+
+    h1{margin:0 0 6px}
+    .muted{color:var(--muted)}
+    h2{margin:22px 0 8px}
+    h3{margin:20px 0 8px}
+    ul{margin:0 0 14px; padding-left:22px}
+    li{margin:6px 0}
+
+    .rule{
+      height:1px; border:0; margin:12px 0 8px;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+    }
+    .copyr{margin-top:8px; color:var(--muted); font-size:.95rem}
+
+    @media (max-width:520px){
+      .card{padding:26px 20px}
+    }
   </style>
 </head>
 <body>
-  <main class="wrapper" aria-label="Security">
-    <section class="card" role="region" aria-labelledby="sec-title">
-      <a class="back" href="/">← Back to home</a>
-      <h1 id="sec-title">Security</h1>
-      <p class="updated">Last updated: September 7, 2025</p>
+  <main class="wrapper" aria-label="Security information">
+    <section class="card" role="region" aria-labelledby="title">
+      <p><a href="/" aria-label="Back to home">← Back to home</a></p>
+
+      <h1 id="title">Security</h1>
+      <p class="muted">Last updated: September 7, 2025</p>
 
       <h2>Security-by-design principles we follow</h2>
       <ul>
@@ -80,7 +128,11 @@
         <li>SPF/DMARC observations without bypass.</li>
         <li>Clickjacking with no sensitive action.</li>
         <li>Attacks requiring device compromise or on-path network control (MITM).</li>
+        <li>Fully automated scans without proof of impact.</li>
       </ul>
+
+      <hr class="rule" aria-hidden="true" />
+      <p class="copyr">© 2025 TS MIAMI GLOBAL LLC. All rights reserved.</p>
     </section>
   </main>
 </body>
