@@ -1,0 +1,11 @@
+:root{
+  --brand-green:#18e1a3;
+  --focus:#2dd4bf;
+}
+
+a{color:var(--brand-green);text-decoration:none;}
+a:visited{color:var(--brand-green);}
+a:hover{text-decoration:underline;}
+a:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+
+.link-green{color:var(--brand-green)!important;}
