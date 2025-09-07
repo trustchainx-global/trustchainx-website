@@ -34,8 +34,26 @@
   <!-- Global theme (unified brand green/link styles) -->
   <link rel="stylesheet" href="theme.css" />
 
+  <!-- Structured data: Organization + support contact -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"TrustChainX",
+    "url":"https://trustchainx.io/",
+    "logo":"https://trustchainx.io/logo-512.png",
+    "sameAs":["https://x.com/TrustChainXHQ"],
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "contactType":"customer support",
+      "email":"support@trustchainx.io",
+      "areaServed":"Global",
+      "availableLanguage":["en"]
+    }]
+  }
+  </script>
+
   <style>
-    /* mobile/desktop toggle for social link text */
     .only-mobile{display:none}
     @media (max-width:480px){
       .only-desktop{display:none}
@@ -48,7 +66,7 @@
       --fg:#e9ecef;
       --muted:#a9b3bf;
       --ring:rgba(0,0,0,.35);
-      --brand-1:#18e1a3; /* gradient accent (matches theme brand green) */
+      --brand-1:#18e1a3;
       --brand-2:#10c2a0;
       --shadow:0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
       --border:1px solid rgba(255,255,255,.06);
@@ -70,7 +88,6 @@
       padding:28px;
     }
 
-    /* layout */
     .wrapper{width:100%; display:flex; justify-content:center}
     .card{
       width:min(92vw, 1120px);
@@ -82,25 +99,21 @@
       backdrop-filter:blur(2px);
     }
 
-    /* hero fills most of first screen on desktop */
     .hero{
       display:grid; align-content:center; gap:12px;
       min-height:60vh;
     }
     @media (min-width:1024px){ .hero{ min-height:80vh } }
 
-    /* grid sections to reduce vertical scroll on wide screens */
     .section{margin:28px 0}
     .grid-2{display:grid; gap:22px}
     @media (min-width:900px){
       .grid-2{grid-template-columns: 1.15fr 1fr}
     }
 
-    /* logo */
     .logo-wrap{display:flex; justify-content:center; margin-top:-8px; margin-bottom:18px}
     .logo{width:76px; height:76px; border-radius:18px; box-shadow:0 2px 0 rgba(255,255,255,.05), 0 12px 28px rgba(0,0,0,.45); display:block}
 
-    /* type */
     #brand{font-size:2rem; letter-spacing:.2px; margin:0 0 4px}
     .sublead{margin:0 0 24px; color:var(--muted)}
     .lead{font-size:1.25rem; margin:0 0 8px}
@@ -109,7 +122,6 @@
     .list-tight li{margin:.35rem 0}
     .ol-tight{margin:0 0 12px 18px}
 
-    /* buttons */
     .actions{display:flex; gap:12px; flex-wrap:wrap; margin:10px 0 18px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -128,7 +140,6 @@
     .btn--press{ background:#1e293b; border:1px solid rgba(255,255,255,.12); color:#e5edf5; }
     .btn--press:hover, .btn--press:focus, .btn--press:active{ background:linear-gradient(90deg,var(--brand-1),var(--brand-2)); color:#041b18; border:0; filter:brightness(1.04) saturate(1.05); }
 
-    /* meta + links */
     .rule{height:1px; border:0; margin:8px 0 14px; background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);}
     .emails{color:var(--muted); font-size:.96rem}
     .emails a{text-decoration:underline}
@@ -149,7 +160,7 @@
   <main class="wrapper" aria-label="TrustChainX landing">
     <section class="card" role="region" aria-labelledby="brand">
 
-      <!-- HERO (first fold) -->
+      <!-- HERO -->
       <div class="hero">
         <div class="logo-wrap" aria-hidden="true">
           <img class="logo" src="logo-512.png" alt="TrustChainX logo" />
@@ -166,7 +177,7 @@
         </div>
       </div>
 
-      <!-- CONTENT (two columns on desktop) -->
+      <!-- CONTENT -->
       <div class="section grid-2">
         <div>
           <h3>Private alpha</h3>
