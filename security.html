@@ -1,53 +1,87 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Security — TrustChainX™</title><meta name="theme-color" content="#0b1014">
-<style>
-  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b1014;color:#e9ecef;font:500 16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-  .card{max-width:840px;margin:40px;padding:28px 32px;border-radius:14px;background:#12181f;border:1px solid rgba(255,255,255,.08)}
-  h1{margin:0 0 12px;font-size:28px} h2{margin:20px 0 8px;font-size:20px}
-  p,li{color:#a9b3bf} a{color:#18e1a3;text-decoration:none} a:hover{text-decoration:underline}
-  .back{margin-top:18px;display:inline-block}
-</style></head><body>
-<main class="card">
-  <h1>Security</h1>
-  <p>Security-by-design principles we follow:</p>
-  <ul>
-    <li>Mandatory 2FA for admins and least-privilege access.</li>
-    <li>HTTPS everywhere; hardened CI/CD and dependency monitoring.</li>
-    <li>Timely patching of vulnerabilities and rotating credentials.</li>
-    <li>We never ask for private keys or passwords from users.</li>
-  </ul>
-  <p>Report a potential issue: <a href="mailto:security@trustchainx.io">security@trustchainx.io</a></p>
-  <p class="back"><a href="/">← Back to home</a></p>
-</main>
-</body></html>
-<p class="updated" style="color:#a9b3bf;margin:0 0 14px">Last updated: September 7, 2025</p>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Security — TrustChainX™</title>
+  <meta name="description" content="Our security-by-design principles, vulnerability disclosure guidelines, and how to report issues responsibly." />
+  <meta name="theme-color" content="#0b1014" />
 
-<h3>Report a vulnerability</h3>
-<p>
-  Found a potential issue? Email
-  <a href="mailto:security@trustchainx.io">security@trustchainx.io</a>.
-  We aim to acknowledge within <strong>2 business days</strong>.
-</p>
+  <style>
+    :root{
+      --bg:#0b1014; --card:#12181f; --fg:#e9ecef; --muted:#a9b3bf;
+      --shadow:0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
+      --border:1px solid rgba(255,255,255,.06);
+      --green:#18e1a3; /* same brand green used in Privacy/Terms */
+    }
+    html{font-size:19px}
+    body{
+      margin:0; min-height:100dvh; display:grid; place-items:center;
+      background:
+        radial-gradient(1200px 600px at 50% 10%, #0f1620 0%, transparent 60%),
+        radial-gradient(900px 500px at 100% 20%, #0c141b 0%, transparent 60%),
+        var(--bg);
+      color:var(--fg); font:500 1rem/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      padding:28px;
+    }
+    a{color:var(--green); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrapper{width:100%; display:flex; justify-content:center}
+    .card{
+      width:min(92vw, 920px); padding:28px 32px; border-radius:16px;
+      background:linear-gradient(180deg, rgba(18,24,31,.96), rgba(18,24,31,.92));
+      border:var(--border); box-shadow:var(--shadow); backdrop-filter:blur(2px);
+    }
+    h1{margin:0 0 6px} .updated{color:var(--muted); margin:0 0 18px}
+    h2{margin:22px 0 8px} h3{margin:18px 0 6px}
+    ul{margin:0 0 14px 22px}
+    .back{display:inline-block; margin:0 0 12px}
+  </style>
+</head>
+<body>
+  <main class="wrapper" aria-label="Security">
+    <section class="card" role="region" aria-labelledby="sec-title">
+      <a class="back" href="/">← Back to home</a>
+      <h1 id="sec-title">Security</h1>
+      <p class="updated">Last updated: September 7, 2025</p>
 
-<h3>Coordinated disclosure guidelines</h3>
-<ul>
-  <li>Give us reasonable time to investigate and fix before public disclosure.</li>
-  <li>Do not access, modify, or download other users’ data.</li>
-  <li>No DDoS, spam, social engineering, or physical attacks.</li>
-  <li>Stop testing and notify us immediately if you suspect data exposure.</li>
-</ul>
+      <h2>Security-by-design principles we follow</h2>
+      <ul>
+        <li>Mandatory 2FA for admins and least-privilege access.</li>
+        <li>HTTPS everywhere; hardened CI/CD and dependency monitoring.</li>
+        <li>Timely patching of vulnerabilities and rotating credentials.</li>
+        <li>We never ask for private keys or passwords from users.</li>
+      </ul>
 
-<h3>Scope</h3>
-<ul>
-  <li><code>trustchainx.io</code> and email addresses under <code>@trustchainx.io</code>.</li>
-</ul>
+      <h3>Report a vulnerability</h3>
+      <p>
+        Found a potential issue? Email
+        <a href="mailto:security@trustchainx.io">security@trustchainx.io</a>.
+        We aim to acknowledge within <strong>2 business days</strong>.
+      </p>
 
-<h3>Out of scope</h3>
-<ul>
-  <li>Rate-limiting/DoS without a practical exploit.</li>
-  <li>SPF/DMARC observations without bypass.</li>
-  <li>Clickjacking with no sensitive action.</li>
-  <li>Attacks requiring device compromise or on-path network control (MITM).</li>
-</ul>
+      <h3>Coordinated disclosure guidelines</h3>
+      <ul>
+        <li>Give us reasonable time to investigate and fix before public disclosure.</li>
+        <li>Do not access, modify, or download other users’ data.</li>
+        <li>No DDoS, spam, social engineering, or physical attacks.</li>
+        <li>Stop testing and notify us immediately if you suspect data exposure.</li>
+      </ul>
+
+      <h3>Scope</h3>
+      <ul>
+        <li><code>trustchainx.io</code> and email addresses under <code>@trustchainx.io</code>.</li>
+      </ul>
+
+      <h3>Out of scope</h3>
+      <ul>
+        <li>Rate-limiting/DoS without a practical exploit.</li>
+        <li>SPF/DMARC observations without bypass.</li>
+        <li>Clickjacking with no sensitive action.</li>
+        <li>Attacks requiring device compromise or on-path network control (MITM).</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
