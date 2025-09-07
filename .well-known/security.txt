@@ -1,0 +1,5 @@
+Contact: mailto:security@trustchainx.io
+Policy: https://trustchainx.io/security.html
+Preferred-Languages: en
+Hiring: https://trustchainx.io/
+Canonical: https://trustchainx.io/.well-known/security.txt
