@@ -9,3 +9,19 @@ a:hover{text-decoration:underline;}
 a:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
 
 .link-green{color:var(--brand-green)!important;}
+/* --- Sections for service teaser --- */
+.section{
+  margin-top:22px;padding:16px 18px;
+  border:var(--border);border-radius:12px;
+  background:linear-gradient(180deg, rgba(18,24,31,.90), rgba(18,24,31,.86));
+  box-shadow:var(--shadow);
+}
+.section h2{font-size:1.15rem;margin:0 0 8px}
+.list{margin:0;padding-left:18px}
+.badge{
+  display:inline-block;padding:4px 8px;border-radius:8px;
+  background:rgba(24,225,163,.12);
+  color:var(--brand-green);border:1px solid rgba(24,225,163,.35);
+  font-size:.85rem;font-weight:700
+}
+.eyebrow{font-size:.9rem;color:var(--muted);margin:0 0 8px}
