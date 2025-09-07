@@ -7,6 +7,8 @@
   <title>TrustChainX™ — Coming Soon</title>
   <meta name="description" content="Trusted infrastructure for cross-border commerce. A modern platform that blends compliance-first trade operations with seamless digital payments. Our focus: real-world value, security by design, and global scale." />
   <meta name="theme-color" content="#0b1014" />
+  <link rel="canonical" href="https://trustchainx.io/" />
+  <meta name="robots" content="index,follow" />
 
   <!-- Open Graph / Twitter cards -->
   <meta property="og:type" content="website">
@@ -29,7 +31,7 @@
   <link rel="manifest" href="site.webmanifest" />
   <link rel="preload" href="logo-512.png" as="image" />
 
-  <!-- global theme (unified brand green/link styles) -->
+  <!-- Global theme (unified brand green/link styles) -->
   <link rel="stylesheet" href="theme.css" />
 
   <style>
@@ -46,7 +48,7 @@
       --fg:#e9ecef;
       --muted:#a9b3bf;
       --ring:rgba(0,0,0,.35);
-      --brand-1:#18e1a3; /* fallback if theme.css not loaded */
+      --brand-1:#18e1a3; /* gradient accent (matches theme brand green) */
       --brand-2:#10c2a0;
       --shadow:0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
       --border:1px solid rgba(255,255,255,.06);
@@ -68,14 +70,10 @@
       padding:28px;
     }
 
-    a{color:var(--brand-green, #18e1a3); text-decoration:none}
-    a:hover{text-decoration:underline}
-    a:focus-visible{outline:2px solid #2dd4bf; outline-offset:2px}
-
     /* layout */
     .wrapper{width:100%; display:flex; justify-content:center}
     .card{
-      width:min(92vw, 1120px);      /* wider on desktop */
+      width:min(92vw, 1120px);
       padding:36px 40px;
       border-radius:16px;
       background:linear-gradient(180deg, rgba(18,24,31,.96), rgba(18,24,31,.92));
@@ -109,6 +107,7 @@
     h3{margin:18px 0 10px}
     ul{margin:0 0 12px 18px; padding:0}
     .list-tight li{margin:.35rem 0}
+    .ol-tight{margin:0 0 12px 18px}
 
     /* buttons */
     .actions{display:flex; gap:12px; flex-wrap:wrap; margin:10px 0 18px}
@@ -162,8 +161,8 @@
         <p>A modern platform that blends compliance-first trade operations with seamless digital payments. Our focus: real-world value, security by design, and global scale.</p>
 
         <div class="actions" role="group" aria-label="Primary actions">
-          <a class="btn btn--cta" href="mailto:info@trustchainx.io?subject=Join%20the%20waitlist%20—%20TrustChainX">Join the waitlist</a>
-          <a class="btn btn--press" href="mailto:press@trustchainx.io?subject=Press%20inquiry%20—%20TrustChainX">Press inquiries</a>
+          <a class="btn btn--cta" href="mailto:info@trustchainx.io?subject=Join%20the%20waitlist%20%E2%80%94%20TrustChainX">Join the waitlist</a>
+          <a class="btn btn--press" href="mailto:press@trustchainx.io?subject=Press%20inquiry%20%E2%80%94%20TrustChainX">Press inquiries</a>
         </div>
       </div>
 
@@ -175,8 +174,8 @@
           <ul class="list-tight">
             <li>Compliance-first trade operations: KYB/AML rails, audit trails, sanctions screening.</li>
             <li>Digital payments: multi-currency settlement, on/off-ramps, reconciliation.</li>
-            <li>Document & workflow automation: invoices, packing lists, bills of lading.</li>
-            <li>APIs & dashboards: integrate in days, not months.</li>
+            <li>Document &amp; workflow automation: invoices, packing lists, bills of lading.</li>
+            <li>APIs &amp; dashboards: integrate in days, not months.</li>
           </ul>
         </div>
 
@@ -184,8 +183,8 @@
           <h3>Who we help</h3>
           <ul class="list-tight">
             <li>Importers/exporters moving goods across borders.</li>
-            <li>Fintechs & PSPs needing compliant trade/payment rails.</li>
-            <li>Logistics & freight platforms adding payments.</li>
+            <li>Fintechs &amp; PSPs needing compliant trade/payment rails.</li>
+            <li>Logistics &amp; freight platforms adding payments.</li>
           </ul>
         </div>
       </div>
@@ -195,10 +194,10 @@
           <h3>Get early access</h3>
           <p>Join the waitlist and tell us your use case. We reply within 1–2 business days.</p>
           <div class="actions">
-            <a class="btn btn--cta" href="mailto:info@trustchainx.io?subject=Waitlist%20request%20—%20TrustChainX&body=Tell%20us%20briefly%20about%20your%20use%20case%2C%20markets%2C%20and%20volume.">Waitlist form</a>
-            <a class="btn btn--press" href="mailto:support@trustchainx.io?subject=Early%20access%20details%20—%20TrustChainX">Email us details</a>
+            <a class="btn btn--cta" href="mailto:info@trustchainx.io?subject=Waitlist%20request%20%E2%80%94%20TrustChainX&amp;body=Company%20name%3A%0AMarkets%2Fcorridors%3A%0AVolume%20estimate%3A%0AUse%20case%3A%0ATimeline%3A%0A">Waitlist form</a>
+            <a class="btn btn--press" href="mailto:support@trustchainx.io?subject=Early%20access%20details%20%E2%80%94%20TrustChainX">Email us details</a>
           </div>
-          <p class="sublead">Trusted by operators across trade & fintech.</p>
+          <p class="sublead">Trusted by operators across trade &amp; fintech.</p>
         </div>
 
         <div>
@@ -206,18 +205,18 @@
           <ul class="list-tight">
             <li>Compliance-first KYB/AML, audit trails, sanctions screening.</li>
             <li>Effortless payments: multi-currency, on/off-ramps, auto-recon.</li>
-            <li>APIs & UX dashboards for ops + APIs for fast integration.</li>
+            <li>APIs &amp; UX dashboards for ops + APIs for fast integration.</li>
           </ul>
 
           <h3>How it works (alpha)</h3>
-          <ol class="list-tight" style="margin-left:18px">
-            <li>Tell us your use case — form or email, with markets & volume.</li>
-            <li>Sandbox — we enable sandbox data flows & test keys.</li>
+          <ol class="ol-tight">
+            <li>Tell us your use case — form or email, with markets &amp; volume.</li>
+            <li>Sandbox — we enable sandbox data flows &amp; test keys.</li>
             <li>Pilot — limited scope pilot with clear success metrics.</li>
           </ol>
           <div class="actions">
-            <a class="btn btn--cta" href="mailto:support@trustchainx.io?subject=Start%20a%20pilot%20—%20TrustChainX">Start a pilot</a>
-            <a class="btn btn--press" href="mailto:press@trustchainx.io?subject=Press%20inquiry%20—%20TrustChainX">Press inquiries</a>
+            <a class="btn btn--cta" href="mailto:support@trustchainx.io?subject=Start%20a%20pilot%20%E2%80%94%20TrustChainX">Start a pilot</a>
+            <a class="btn btn--press" href="mailto:press@trustchainx.io?subject=Press%20inquiry%20%E2%80%94%20TrustChainX">Press inquiries</a>
           </div>
         </div>
       </div>
