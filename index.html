@@ -27,21 +27,26 @@
   <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png" />
   <link rel="manifest" href="site.webmanifest" />
-
   <link rel="preload" href="logo-512.png" as="image" />
 
+  <!-- global theme (unified brand green/link styles) -->
+  <link rel="stylesheet" href="theme.css" />
+
   <style>
+    /* mobile/desktop toggle for social link text */
     .only-mobile{display:none}
-@media (max-width:480px){
-  .only-desktop{display:none}
-  .only-mobile{display:inline}
-}  :root{
+    @media (max-width:480px){
+      .only-desktop{display:none}
+      .only-mobile{display:inline}
+    }
+
+    :root{
       --bg:#0b1014;
       --card:#12181f;
       --fg:#e9ecef;
       --muted:#a9b3bf;
       --ring:rgba(0,0,0,.35);
-      --brand-1:#18e1a3;
+      --brand-1:#18e1a3; /* fallback if theme.css not loaded */
       --brand-2:#10c2a0;
       --shadow:0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
       --border:1px solid rgba(255,255,255,.06);
@@ -53,7 +58,7 @@
 
     *{box-sizing:border-box}
     body{
-      margin:0; min-height:100dvh; display:grid; place-items:center;
+      margin:0; min-height:100dvh; display:grid; place-items:start center;
       background:
         radial-gradient(1200px 600px at 50% 10%, #0f1620 0%, transparent 60%),
         radial-gradient(900px 500px at 100% 20%, #0c141b 0%, transparent 60%),
@@ -63,13 +68,14 @@
       padding:28px;
     }
 
-    a{color:inherit; text-decoration:none}
+    a{color:var(--brand-green, #18e1a3); text-decoration:none}
     a:hover{text-decoration:underline}
     a:focus-visible{outline:2px solid #2dd4bf; outline-offset:2px}
 
+    /* layout */
     .wrapper{width:100%; display:flex; justify-content:center}
     .card{
-      width:min(92vw, 920px);
+      width:min(92vw, 1120px);      /* wider on desktop */
       padding:36px 40px;
       border-radius:16px;
       background:linear-gradient(180deg, rgba(18,24,31,.96), rgba(18,24,31,.92));
@@ -78,18 +84,33 @@
       backdrop-filter:blur(2px);
     }
 
-    .logo-wrap{display:flex; justify-content:center; margin-top:-8px; margin-bottom:18px}
-    .logo{
-      width:76px; height:76px; border-radius:18px;
-      box-shadow:0 2px 0 rgba(255,255,255,.05), 0 12px 28px rgba(0,0,0,.45);
-      display:block;
+    /* hero fills most of first screen on desktop */
+    .hero{
+      display:grid; align-content:center; gap:12px;
+      min-height:60vh;
+    }
+    @media (min-width:1024px){ .hero{ min-height:80vh } }
+
+    /* grid sections to reduce vertical scroll on wide screens */
+    .section{margin:28px 0}
+    .grid-2{display:grid; gap:22px}
+    @media (min-width:900px){
+      .grid-2{grid-template-columns: 1.15fr 1fr}
     }
 
+    /* logo */
+    .logo-wrap{display:flex; justify-content:center; margin-top:-8px; margin-bottom:18px}
+    .logo{width:76px; height:76px; border-radius:18px; box-shadow:0 2px 0 rgba(255,255,255,.05), 0 12px 28px rgba(0,0,0,.45); display:block}
+
+    /* type */
     #brand{font-size:2rem; letter-spacing:.2px; margin:0 0 4px}
     .sublead{margin:0 0 24px; color:var(--muted)}
     .lead{font-size:1.25rem; margin:0 0 8px}
-    p{margin:0 0 16px}
+    h3{margin:18px 0 10px}
+    ul{margin:0 0 12px 18px; padding:0}
+    .list-tight li{margin:.35rem 0}
 
+    /* buttons */
     .actions{display:flex; gap:12px; flex-wrap:wrap; margin:10px 0 18px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -104,18 +125,12 @@
       color:#041b18; border:0;
       box-shadow: 0 0 0 1px rgba(0,0,0,.10), 0 6px 18px rgba(0,0,0,.25);
     }
-    .btn--cta:hover,
-    .btn--cta:focus{ filter: brightness(1.06) saturate(1.06); transform: translateY(-0.5px); }
+    .btn--cta:hover, .btn--cta:focus{ filter: brightness(1.06) saturate(1.06); transform: translateY(-0.5px); }
+    .btn--press{ background:#1e293b; border:1px solid rgba(255,255,255,.12); color:#e5edf5; }
+    .btn--press:hover, .btn--press:focus, .btn--press:active{ background:linear-gradient(90deg,var(--brand-1),var(--brand-2)); color:#041b18; border:0; filter:brightness(1.04) saturate(1.05); }
 
-    .btn--press{
-      background:#1e293b; border:1px solid rgba(255,255,255,.12); color:#e5edf5;
-    }
-    .btn--press:hover,.btn--press:focus,.btn--press:active{
-      background:linear-gradient(90deg,var(--brand-1),var(--brand-2)); color:#041b18; border:0; filter:brightness(1.04) saturate(1.05);
-    }
-
+    /* meta + links */
     .rule{height:1px; border:0; margin:8px 0 14px; background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);}
-
     .emails{color:var(--muted); font-size:.96rem}
     .emails a{text-decoration:underline}
     .social, .legal{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0 0;}
@@ -127,99 +142,88 @@
       #brand{font-size:1.7rem}
       .actions{gap:10px}
       .btn{height:42px}
+      .hero{min-height:unset}
     }
   </style>
 </head>
 <body>
-  <main class="wrapper" aria-label="TrustChainX coming soon">
+  <main class="wrapper" aria-label="TrustChainX landing">
     <section class="card" role="region" aria-labelledby="brand">
-      <div class="logo-wrap" aria-hidden="true">
-        <img class="logo" src="logo-512.png" alt="TrustChainX logo" />
+
+      <!-- HERO (first fold) -->
+      <div class="hero">
+        <div class="logo-wrap" aria-hidden="true">
+          <img class="logo" src="logo-512.png" alt="TrustChainX logo" />
+        </div>
+        <h1 id="brand">TrustChainX™</h1>
+        <p class="sublead">Trusted infrastructure for cross-border commerce.</p>
+
+        <h2 class="lead">We’re building.</h2>
+        <p>A modern platform that blends compliance-first trade operations with seamless digital payments. Our focus: real-world value, security by design, and global scale.</p>
+
+        <div class="actions" role="group" aria-label="Primary actions">
+          <a class="btn btn--cta" href="mailto:info@trustchainx.io?subject=Join%20the%20waitlist%20—%20TrustChainX">Join the waitlist</a>
+          <a class="btn btn--press" href="mailto:press@trustchainx.io?subject=Press%20inquiry%20—%20TrustChainX">Press inquiries</a>
+        </div>
       </div>
 
-      <h1 id="brand">TrustChainX™</h1>
-      <p class="sublead">Trusted infrastructure for cross-border commerce.</p>
+      <!-- CONTENT (two columns on desktop) -->
+      <div class="section grid-2">
+        <div>
+          <h3>Private alpha</h3>
+          <h3>What we do (snapshot)</h3>
+          <ul class="list-tight">
+            <li>Compliance-first trade operations: KYB/AML rails, audit trails, sanctions screening.</li>
+            <li>Digital payments: multi-currency settlement, on/off-ramps, reconciliation.</li>
+            <li>Document & workflow automation: invoices, packing lists, bills of lading.</li>
+            <li>APIs & dashboards: integrate in days, not months.</li>
+          </ul>
+        </div>
 
-      <h2 class="lead">We’re building.</h2>
-      <p>A modern platform that blends compliance-first trade operations with seamless digital payments. Our focus: real-world value, security by design, and global scale.</p>
+        <div>
+          <h3>Who we help</h3>
+          <ul class="list-tight">
+            <li>Importers/exporters moving goods across borders.</li>
+            <li>Fintechs & PSPs needing compliant trade/payment rails.</li>
+            <li>Logistics & freight platforms adding payments.</li>
+          </ul>
+        </div>
+      </div>
 
-      <div class="actions" role="group" aria-label="Primary actions">
-        <a class="btn btn--cta" href="mailto:info@trustchainx.io?subject=Join%20the%20waitlist%20—%20TrustChainX">Join the waitlist</a>
-        <a class="btn btn--press" href="mailto:press@trustchainx.io?subject=Press%20inquiry%20—%20TrustChainX">Press inquiries</a>
+      <div class="section grid-2">
+        <div>
+          <h3>Get early access</h3>
+          <p>Join the waitlist and tell us your use case. We reply within 1–2 business days.</p>
+          <div class="actions">
+            <a class="btn btn--cta" href="mailto:info@trustchainx.io?subject=Waitlist%20request%20—%20TrustChainX&body=Tell%20us%20briefly%20about%20your%20use%20case%2C%20markets%2C%20and%20volume.">Waitlist form</a>
+            <a class="btn btn--press" href="mailto:support@trustchainx.io?subject=Early%20access%20details%20—%20TrustChainX">Email us details</a>
+          </div>
+          <p class="sublead">Trusted by operators across trade & fintech.</p>
+        </div>
+
+        <div>
+          <h3>Product pillars</h3>
+          <ul class="list-tight">
+            <li>Compliance-first KYB/AML, audit trails, sanctions screening.</li>
+            <li>Effortless payments: multi-currency, on/off-ramps, auto-recon.</li>
+            <li>APIs & UX dashboards for ops + APIs for fast integration.</li>
+          </ul>
+
+          <h3>How it works (alpha)</h3>
+          <ol class="list-tight" style="margin-left:18px">
+            <li>Tell us your use case — form or email, with markets & volume.</li>
+            <li>Sandbox — we enable sandbox data flows & test keys.</li>
+            <li>Pilot — limited scope pilot with clear success metrics.</li>
+          </ol>
+          <div class="actions">
+            <a class="btn btn--cta" href="mailto:support@trustchainx.io?subject=Start%20a%20pilot%20—%20TrustChainX">Start a pilot</a>
+            <a class="btn btn--press" href="mailto:press@trustchainx.io?subject=Press%20inquiry%20—%20TrustChainX">Press inquiries</a>
+          </div>
+        </div>
       </div>
 
       <hr class="rule" aria-hidden="true" />
-      <!-- Services snapshot -->
-<section class="section" role="region" aria-label="What we do">
-  <p class="eyebrow"><span class="badge">Private alpha</span></p>
-  <h2 class="lead">What we do (snapshot)</h2>
-  <ul class="list">
-    <li>Compliance-first trade operations: KYB/AML rails, audit trails, sanctions screening.</li>
-    <li>Digital payments: multi-currency settlement, on/off-ramps, reconciliation.</li>
-    <li>Document & workflow automation: invoices, packing lists, bills of lading.</li>
-    <li>APIs & dashboards: integrate in days, not months.</li>
-  </ul>
-</section>
 
-<!-- Who we help -->
-<section class="section" role="region" aria-label="Who we help">
-  <h2 class="lead">Who we help</h2>
-  <ul class="list">
-    <li>Importers/exporters moving goods across borders.</li>
-    <li>Fintechs & PSPs needing compliant trade/payment rails.</li>
-    <li>Logistics & freight platforms adding payments.</li>
-  </ul>
-</section>
-
-<!-- Early access -->
-<section class="section" role="region" aria-label="Early access">
-  <h2 class="lead">Get early access</h2>
-  <p>Join the waitlist and tell us your use case. We reply within 1–2 business days.</p>
-  <div class="actions" role="group" aria-label="Early access actions">
-    <!-- Option A: Google Form (replace FORM_URL when you have it) -->
-    <a class="btn btn--cta"
-       href="https://forms.gle/FORM_URL"
-       target="_blank" rel="noopener">Waitlist form</a>
-    <!-- Social proof (lightweight) -->
-<section class="section" role="region" aria-label="Social proof">
-  <p class="eyebrow">Trusted by operators across trade & fintech</p>
-  <ul class="list">
-    <li>Import/export SMEs piloting cross-border workflows.</li>
-    <li>Fintech partners exploring compliant payment rails.</li>
-    <li>Logistics platforms adding settlement & reconciliation.</li>
-  </ul>
-</section>
-
-<!-- Product pillars -->
-<section class="section" role="region" aria-label="Product pillars">
-  <h2 class="lead">Product pillars</h2>
-  <ul class="list">
-    <li><strong>Compliance-first:</strong> KYB/AML, audit trails, sanctions screening.</li>
-    <li><strong>Effortless payments:</strong> multi-currency, on/off-ramps, auto-recon.</li>
-    <li><strong>APIs & UX:</strong> dashboards for ops + APIs for fast integration.</li>
-  </ul>
-</section>
-
-<!-- How it works -->
-<section class="section" role="region" aria-label="How it works">
-  <h2 class="lead">How it works (alpha)</h2>
-  <ul class="list">
-    <li><strong>1) Tell us your use case</strong> — form or email with markets & volumes.</li>
-    <li><strong>2) Sandbox</strong> — we enable a sandbox + sample flows & test keys.</li>
-    <li><strong>3) Pilot</strong> — limited scope pilot with clear success metrics.</li>
-  </ul>
-  <div class="actions" role="group" aria-label="Secondary CTA">
-    <a class="btn btn--cta" href="mailto:info@trustchainx.io?subject=Pilot%20request%20—%20TrustChainX">Start a pilot</a>
-    <a class="btn btn--press" href="mailto:press@trustchainx.io?subject=Press%20inquiry%20—%20TrustChainX">Press inquiries</a>
-  </div>
-</section>
-    <!-- Option B: email fallback (works now) -->
-    <a class="btn btn--press"
-       href="mailto:info@trustchainx.io?subject=Early%20access%20request%20—%20TrustChainX&body=Company%3A%0AUse%20case%3A%0ACountries%3A%0ATimeline%3A">
-       Email us details
-    </a>
-  </div>
-</section>
       <p class="emails">
         Official emails:
         <a href="mailto:info@trustchainx.io">info@trustchainx.io</a> ·
@@ -227,25 +231,22 @@
         <a href="mailto:ceo@trustchainx.io">ceo@trustchainx.io</a>
       </p>
 
-     <p class="social" aria-label="Social links">
-  <!-- Desktop shows the full handle -->
-  <a class="only-desktop"
-     href="https://x.com/TrustChainXHQ?utm_source=website&utm_medium=footer"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="@TrustChainXHQ on X">@TrustChainXHQ</a>
+      <p class="social" aria-label="Social links">
+        <a class="only-desktop"
+           href="https://x.com/TrustChainXHQ?utm_source=website&utm_medium=footer"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="@TrustChainXHQ on X">@TrustChainXHQ</a>
+        <a class="only-mobile"
+           href="https://x.com/TrustChainXHQ?utm_source=website&utm_medium=footer"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="@TrustChainXHQ on X">X</a>
+      </p>
 
-  <!-- Mobile shows a short label -->
-  <a class="only-mobile"
-     href="https://x.com/TrustChainXHQ?utm_source=website&utm_medium=footer"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="@TrustChainXHQ on X">X</a>
-</p>
-
-<nav class="legal" aria-label="Legal links">
-  <a href="/privacy.html">Privacy</a> ·
-  <a href="/terms.html">Terms</a> ·
-  <a href="/security.html">Security</a>
-</nav>
+      <nav class="legal" aria-label="Legal links">
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/terms.html">Terms</a> ·
+        <a href="/security.html">Security</a>
+      </nav>
 
       <p class="copyr">© 2025 TS MIAMI GLOBAL LLC. All rights reserved.</p>
     </section>
