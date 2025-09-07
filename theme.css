@@ -25,3 +25,9 @@ a:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
   font-size:.85rem;font-weight:700
 }
 .eyebrow{font-size:.9rem;color:var(--muted);margin:0 0 8px}
+/* polish spacing & readability */
+.section{margin-top:24px}
+.list li{margin: 6px 0}
+.lead{margin-bottom:10px}
+.badge{margin-bottom:6px}
+.rule{margin:14px 0 18px}
