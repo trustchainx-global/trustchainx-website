@@ -4,63 +4,89 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Terms of Use — TrustChainX™</title>
-  <meta name="description" content="Terms of Use for TrustChainX™." />
   <meta name="theme-color" content="#0b1014" />
+
   <style>
     :root{
-      --bg:#0b1014; --card:#12181f; --fg:#e9ecef; --muted:#a9b3bf;
+      --bg:#0b1014;
+      --card:#12181f;
+      --fg:#e9ecef;
+      --muted:#a9b3bf;
+      --brand:#18e1a3; /* الأخضر البراندي */
       --border:1px solid rgba(255,255,255,.06);
       --shadow:0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
     }
+
+    html{font-size:19px}
+    *{box-sizing:border-box}
     body{
-      margin:0; min-height:100dvh; display:grid; place-items:center; padding:28px;
+      margin:0; min-height:100dvh; display:grid; place-items:center;
       background:
         radial-gradient(1200px 600px at 50% 10%, #0f1620 0%, transparent 60%),
         radial-gradient(900px 500px at 100% 20%, #0c141b 0%, transparent 60%),
         var(--bg);
-      color:var(--fg); font:500 1rem/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      color:var(--fg); font:500 1rem/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
       -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      padding:28px;
     }
-    a{color:inherit; text-decoration:underline}
-    .wrap{width:min(92vw, 920px)}
-    .card{background:linear-gradient(180deg, rgba(18,24,31,.96), rgba(18,24,31,.92));
-          border-radius:16px; border:var(--border); box-shadow:var(--shadow); padding:28px 28px 22px}
-    .back{display:inline-flex; gap:8px; align-items:center; text-decoration:none; color:var(--muted); margin:4px 0 10px}
-    .back span{font-size:1.2rem}
-    h1{margin:4px 0 0; font-size:1.75rem}
-    .updated{color:var(--muted); margin:6px 0 18px}
-    h2{margin:22px 0 8px; font-size:1.15rem}
-    ul{margin:8px 0 12px 18px}
+
+    .wrap{width:100%; display:flex; justify-content:center}
+    .card{
+      width:min(92vw, 920px);
+      padding:28px 28px 32px;
+      border-radius:16px;
+      background:linear-gradient(180deg, rgba(18,24,31,.96), rgba(18,24,31,.92));
+      border:var(--border);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(2px);
+    }
+
+    h1{margin:8px 0 4px; font-size:1.55rem}
+    .updated{color:var(--muted); margin:0 0 18px}
+
+    /* الروابط — أخضر براندي */
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    a:focus-visible{outline:2px solid var(--brand); outline-offset:2px}
+
+    /* Back link */
+    .back{margin:0 0 6px}
+    .back a{display:inline-flex; align-items:center; gap:6px; font-weight:600}
+
+    ul{margin:0 0 16px 22px}
     li{margin:6px 0}
-    .fine{color:var(--muted); font-size:.95rem}
-    .foot{margin-top:16px; color:var(--muted); font-size:.95rem}
-    @media (max-width:520px){ .card{padding:22px 18px} h1{font-size:1.5rem} }
+    p{margin:0 0 14px}
+
+    @media(max-width:520px){
+      .card{padding:22px 20px}
+      h1{font-size:1.35rem}
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <a class="back" href="/"><span>←</span> Back to home</a>
+    <section class="card" role="region" aria-labelledby="title">
+      <p class="back"><a href="/">← Back to home</a></p>
 
-    <section class="card">
-      <h1>Terms of Use</h1>
+      <h1 id="title">Terms of Use</h1>
       <p class="updated">Last updated: September 7, 2025</p>
 
-      <p class="fine">These Terms govern your access to and use of the TrustChainX™ website and any related materials we publish (the “Services”). By using the site, you agree to these Terms.</p>
+      <p>These Terms govern your access to and use of the TrustChainX™ website and any related materials we publish (the “Services”). By using the site, you agree to these Terms.</p>
 
-      <h2>Who we are</h2>
-      <p>TrustChainX™ is a brand of <strong>TS MIAMI GLOBAL LLC</strong>.</p>
+      <h3>Who we are</h3>
+      <p>TrustChainX™ is a brand of TS MIAMI GLOBAL LLC.</p>
 
-      <h2>Eligibility</h2>
+      <h3>Eligibility</h3>
       <p>The Services are intended for individuals <strong>18 years and older</strong>. If you are under 18, you may only use the Services with the consent of a parent or legal guardian and only where permitted by law.</p>
 
-      <h2>Use of the Services</h2>
+      <h3>Use of the Services</h3>
       <ul>
         <li>The site is provided for informational purposes and early access requests (e.g., email waitlist, press inquiries).</li>
         <li>Any commercial engagement is governed by a separate written agreement signed by us and you.</li>
         <li>You agree to provide accurate information when contacting us.</li>
       </ul>
 
-      <h2>Prohibited activities</h2>
+      <h3>Prohibited activities</h3>
       <ul>
         <li>Violating law or the rights of others, including IP, privacy, or publicity rights.</li>
         <li>Attempting to probe, scan, or test the vulnerability of our systems or to breach security or authentication measures.</li>
@@ -68,31 +94,31 @@
         <li>Scraping or copying content except as permitted by applicable law.</li>
       </ul>
 
-      <h2>Intellectual property</h2>
-      <p>All content on the site (text, graphics, logos, and design) is owned by TS MIAMI GLOBAL LLC or our licensors. <strong>TrustChainX™</strong> is a trademark of TS MIAMI GLOBAL LLC. You may not use our marks without prior written permission.</p>
+      <h3>Intellectual property</h3>
+      <p>All content on the site (text, graphics, logos, and design) is owned by TS MIAMI GLOBAL LLC or our licensors. TrustChainX™ is a trademark of TS MIAMI GLOBAL LLC. You may not use our marks without prior written permission.</p>
 
-      <h2>Third-party links</h2>
+      <h3>Third-party links</h3>
       <p>The site may contain links to third-party websites or platforms (e.g., X / LinkedIn). We are not responsible for their content, policies, or practices.</p>
 
-      <h2>Disclaimers</h2>
-      <p>The Services are provided on an <strong>“as is” and “as available”</strong> basis. We make no warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, and non-infringement.</p>
+      <h3>Disclaimers</h3>
+      <p>The Services are provided on an “as is” and “as available” basis. We make no warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, and non-infringement.</p>
 
-      <h2>Limitation of liability</h2>
+      <h3>Limitation of liability</h3>
       <p>To the maximum extent permitted by law, TS MIAMI GLOBAL LLC and its officers, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, arising out of or related to your use of the Services.</p>
 
-      <h2>Indemnification</h2>
+      <h3>Indemnification</h3>
       <p>You agree to indemnify and hold harmless TS MIAMI GLOBAL LLC from any claims or demands arising from your misuse of the Services or violation of these Terms.</p>
 
-      <h2>Changes</h2>
+      <h3>Changes</h3>
       <p>We may update these Terms from time to time. We’ll post the new effective date above. Your continued use after changes means you accept the updated Terms.</p>
 
-      <h2>Governing law</h2>
-      <p>These Terms are governed by the laws of the <strong>State of Florida, USA</strong>, without regard to its conflict-of-laws rules. Venue will be the state or federal courts located in <strong>Miami-Dade County, Florida</strong>.</p>
+      <h3>Governing law</h3>
+      <p>These Terms are governed by the laws of the State of Florida, USA, without regard to its conflict-of-laws rules. Venue will be the state or federal courts located in Miami-Dade County, Florida.</p>
 
-      <h2>Contact</h2>
+      <h3>Contact</h3>
       <p>Questions about these Terms: <a href="mailto:support@trustchainx.io">support@trustchainx.io</a></p>
 
-      <p class="foot">© 2025 TS MIAMI GLOBAL LLC. All rights reserved.</p>
+      <p class="updated">© 2025 TS MIAMI GLOBAL LLC. All rights reserved.</p>
     </section>
   </main>
 </body>
